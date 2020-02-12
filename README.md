@@ -3,9 +3,9 @@
 Run PyTorch models in the browser with JavaScript by first converting your PyTorch model into the ONNX format and then loading that ONNX model in your website or app using ONNX.js. In the video tutorial below, I take you through this process using the demo example of a handwritten digit recognition model trained on the MNIST dataset.
 
 ### Tutorial
-...(coming soon)
+https://www.youtube.com/watch?v=Vs730jsRgO8
 
-[<img src="https://img.youtube.com/vi/IK7nBOLYzdE/hqdefault.jpg">](https://www.youtube.com/watch?v=IK7nBOLYzdE)
+[<img src="https://img.youtube.com/vi/Vs730jsRgO8/hqdefault.jpg">](https://www.youtube.com/watch?v=Vs730jsRgO8)
 
 ### Live Demo and Code Sandbox
 
