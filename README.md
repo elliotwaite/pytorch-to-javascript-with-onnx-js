@@ -63,3 +63,7 @@ https://www.youtube.com/watch?v=Vs730jsRgO8
 * Faster load times (don't have to download the model).
 * Faster and consistent inference times with larger models (can take advantage of GPUs or other accelerators).
 * Model privacy (don't have to share your model if you want to keep it private).
+
+## License
+
+[MIT](LICENSE)
