@@ -21,7 +21,7 @@ ctx.font = "28px sans-serif";
 ctx.textAlign = "center";
 ctx.textBaseline = "middle";
 ctx.fillStyle = "#212121";
-ctx.fillText("Draw a number here!", CANVAS_SIZE / 2, CANVAS_SIZE / 2);
+ctx.fillText("Loading...", CANVAS_SIZE / 2, CANVAS_SIZE / 2);
 
 // Set the line color for the canvas.
 ctx.strokeStyle = "#212121";
@@ -50,7 +50,6 @@ async function updatePredictions() {
   const imgData = ctx.getImageData(0, 0, CANVAS_SIZE, CANVAS_SIZE);
   const input = new onnx.Tensor(new Float32Array(imgData.data), "float32");
 
-  await loadingModelPromise;
   const outputMap = await sess.run([input]);
   const outputTensor = outputMap.values().next().value;
   const predictions = outputTensor.data;
@@ -111,8 +110,13 @@ function bodyMouseOut(event) {
   }
 }
 
-canvas.addEventListener("mousedown", canvasMouseDown);
-canvas.addEventListener("mousemove", canvasMouseMove);
-document.body.addEventListener("mouseup", bodyMouseUp);
-document.body.addEventListener("mouseout", bodyMouseOut);
-clearButton.addEventListener("mousedown", clearCanvas);
+loadingModelPromise.then(() => {
+  canvas.addEventListener("mousedown", canvasMouseDown);
+  canvas.addEventListener("mousemove", canvasMouseMove);
+  document.body.addEventListener("mouseup", bodyMouseUp);
+  document.body.addEventListener("mouseout", bodyMouseOut);
+  clearButton.addEventListener("mousedown", clearCanvas);
+
+  ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+  ctx.fillText("Draw a number here!", CANVAS_SIZE / 2, CANVAS_SIZE / 2);
+})
