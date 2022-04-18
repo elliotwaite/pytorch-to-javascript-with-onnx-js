@@ -13,6 +13,18 @@ https://www.youtube.com/watch?v=Vs730jsRgO8
 
 * [Code sandbox](https://codesandbox.io/s/pytorch-to-javascript-with-onnx-vgzep)
 
+Note: The model used in this demo is not very accurate, it will often
+[misclassify
+digits](https://github.com/elliotwaite/pytorch-to-javascript-with-onnx-js/issues/1).
+It's only meant to be used as a proof of concept. It's the same model that was
+used in [PyTorch's MNIST
+example](https://github.com/pytorch/examples/blob/main/mnist/main.py).
+You can find more accurate image classification models here: [Papers With Code -
+Image Classification](https://paperswithcode.com/task/image-classification)
+
+### About Performance
+
+The model used in this demo is very simple and only a proof of concept.
 
 ### The files in this repo (and a description of what they do)
 ```
